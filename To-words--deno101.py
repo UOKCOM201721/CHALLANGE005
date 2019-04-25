@@ -48,10 +48,13 @@ class App:
 
             hundreds = 'Hundred' if not i[0] == 0 else ''
             plus = 'and'
+
+            # defines conditions where and should not be used
             if (i[2] == i[1] and i[2] == 0) or (i[0] == 0):
                 plus = ''
 
             x = 0
+            # responsible for breaking the loop if num in teens
             con = True
             while x < 3 and con:
                 src = self.ones if not x == 1 else self.tens
@@ -73,6 +76,7 @@ class App:
 
         return names
 
+    # formats the string output
     def finalize(self, result):
 
         fin_result = ''
@@ -103,7 +107,7 @@ def main():
 
 
 if __name__ == '__main__':
-    
+
     try:
         main()
     except OverflowError:

@@ -8,7 +8,7 @@ class App:
     ones = {0: '', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 7: 'seven', 8: 'eight', 6: 'six', 9: 'nine'}
     tens = {0: '', 2: 'twenty', 3: 'thirty', 4: 'forty', 5: 'fifty', 7: 'seventy', 8: 'eighty', 6: 'sixty', 9: 'ninety'}
     teens = {0: 'ten', 1: 'eleven', 2: 'twelve', 3: 'thirteen', 4: 'fourteen', 5: 'fifteen', 7: 'seventeen', 8: 'eighteen', 6: 'sixteen' , 9: 'nineteen'}
-    level = ['', 'thousand', 'million', 'trillion']
+    level = ['', 'thousand', 'million', 'billion', 'trillion']
 
     def __init__(self, raw_num):
         raw_str = str(raw_num)
@@ -100,7 +100,7 @@ def main():
         print('Please enter valid number:')
         return
 
-    if num > 10 ** 15:
+    if num > (10 ** 15) - 1:
         raise OverflowError
 
     App(num)
